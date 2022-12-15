@@ -1,0 +1,19 @@
+@mixin mq($point, $q1: min, $q2: width, $q3: null, $q3_point: '', $q3_size: max) {
+  @if $q3 {
+    @media screen and (#{$q1}-#{$q2}: #{$point}), screen and (#{$q3_size}-#{$q3}: #{$q3_point}) {
+      @content;
+    }
+  } @else {
+    @media screen and (#{$q1}-#{$q2}: #{$point}) {
+      @content;
+    }
+  }
+}
+
+@mixin button {
+  cursor: pointer;
+
+  &--disabled {
+    cursor: default;
+  }
+}

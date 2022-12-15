@@ -1,0 +1,24 @@
+@import url('https://cdn.syncfusion.com/ej2/material.css');
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
+//@import 'base/reset';
+//@import 'base/global';
+//@import 'base/mixins';
+
+@import "components/Header";
+@import "components/TodoItem";
+@import "components/TodoList";
+@import "components/TodoPanel";
+
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Raleway, sans-serif;
+  display: flex;
+  align-items: center;
+  margin: 3%;
+}
