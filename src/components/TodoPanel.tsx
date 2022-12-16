@@ -2,12 +2,6 @@ import React, {useState} from 'react';
 import "../styles/app.scss"
 import {HighlightWithinTextarea} from 'react-highlight-within-textarea'
 
-const DEFAULT_TODO = {
-    name: '',
-    description: ""
-}
-
-
 interface AddTodoPanelProps {
     mode: 'add';
     addTodo: ({name, description}: Omit<Todo, 'id'>) => void;
