@@ -20,7 +20,12 @@ function App() {
   const findTags = (str:string):any => {
     return str.split(" ").map((elem,index)=>{
       switch (elem[0]) {
-        case "#":return setTags([...tags,elem]);
+        case "#":
+           if (tags.includes(elem)) {
+            return 0;
+           } else {
+             return setTags([...tags,elem]);
+           }
         default: return 0;
       }
     })

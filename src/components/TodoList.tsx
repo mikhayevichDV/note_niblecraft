@@ -15,7 +15,7 @@ export const TodoList: React.FC<TodoListProps> = ({todos, todoIdForEdit, changeT
     <div className="list-container">
         {todos.map((todo) => {
             if (todo.id === todoIdForEdit)
-                return <TodoPanel mode='edit' changeTodo={changeTodo} editTodo={todo} />;
+                return <TodoPanel mode='edit' id={todo.id} description={todo.description} name={todo.name} changeTodo={changeTodo} editTodo={todo} />;
             return (
                 <TodoItem
                     key={todo.id}

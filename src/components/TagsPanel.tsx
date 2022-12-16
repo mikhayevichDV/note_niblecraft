@@ -1,8 +1,8 @@
 import React from 'react';
 
-const TagsPanel = (tags:any):any => {
+const TagsPanel = (tags: any): any => {
 
-    const deleteTag = (tag:string):any =>{
+    const deleteTag = (tag: string): any => {
 
     }
 
@@ -10,11 +10,11 @@ const TagsPanel = (tags:any):any => {
 
     }
 
-   return tags.tags.map((elem:any,index:any)=>{
-       return <div key={index}>
-           <span onClick={filterTag}>{elem}</span>
-           <button onClick={deleteTag(elem)}>x</button>
-       </div>
+    return tags.tags.map((elem: any, index: any) => {
+        return <div key={index}>
+            <span onClick={filterTag}>{elem}</span>
+            <button onClick={deleteTag(elem)}>x</button>
+        </div>
     })
 };
 
