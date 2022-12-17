@@ -53,11 +53,11 @@ const TodoPanel: React.FC<TodoPanelProps> = (props) => {
                 </label>
             </div>
 
-            <label htmlFor="name">
+            <div className="highlightTextarea">
                 <div>Description</div>
                 <HighlightWithinTextarea highlight={isEdit ? /#(.*?)(?= )/gm : undefined} value={description}
                                          onChange={descriptionChange}/>
-            </label>
+            </div>
 
             <div>
                 {!isEdit && (

@@ -59,9 +59,13 @@ function App() {
     setTodoIdForEdit(null);
   };
 
+  const filterTag = (tags:any,tag:string) => {
+    tags.tags.filter((elem: string)=>elem===tag)
+  }
+
   return <div>
     <Header todoCount={todos.length}/>
-    <TagsPanel tags={tags}/>
+    <TagsPanel tags={tags} />
     <TodoPanel
         mode='add'
         addTodo={addTodo}

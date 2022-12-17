@@ -1,19 +1,15 @@
-import React from 'react';
+import React, {MouseEventHandler} from 'react';
 
-const TagsPanel = (tags: any): any => {
+const TagsPanel= (tags:any) => {
 
-    const deleteTag = (tag: string): any => {
-
+    const deleteTags = (tags:any,elem:string):MouseEventHandler<HTMLButtonElement> => {
+       return tags.filter((tag:string)=>tag!==elem)
     }
 
-    const filterTag = () => {
-
-    }
-
-    return tags.tags.map((elem: any, index: any) => {
+    return tags.tags.map((elem: string, index: number) => {
         return <div key={index}>
-            <span onClick={filterTag}>{elem}</span>
-            <button onClick={deleteTag(elem)}>x</button>
+            <span >{elem}</span>
+            <button onClick={deleteTags}>x</button>
         </div>
     })
 };
