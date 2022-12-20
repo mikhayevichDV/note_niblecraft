@@ -1,17 +1,28 @@
-import React, {MouseEventHandler} from 'react';
+import React from 'react';
+import "../styles/app.scss"
 
-const TagsPanel= (tags:any) => {
+interface TagsPanelProps {
+    tags: Array<string>;
+    deleteTag: (tagValue: string) => void;
+    selectTag: (value: string | null) => void;
+}
 
-    const deleteTags = (tags:any,elem:string):MouseEventHandler<HTMLButtonElement> => {
-       return tags.filter((tag:string)=>tag!==elem)
+const TagsPanel = ({tags, deleteTag, selectTag}: TagsPanelProps) => {
+
+    const createTags = (tags: string[]) => {
+        return tags.map((elem: string, index: number) => {
+            return <div className="tags-container" key={index}>
+                <span className="tag-filter" onClick={() => selectTag(elem)}>{elem} </span>
+                <button className="delete-btn" onClick={() => deleteTag(elem)}> ⊘ </button>
+            </div>
+        })
     }
 
-    return tags.tags.map((elem: string, index: number) => {
-        return <div key={index}>
-            <span >{elem}</span>
-            <button onClick={deleteTags}>x</button>
-        </div>
-    })
+    return <>
+        {createTags(tags)}
+        <span className="tag-filter" onClick={() => selectTag(null)}>Show all tags</span>
+    </>
+
 };
 
 export default TagsPanel;

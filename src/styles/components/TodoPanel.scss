@@ -1,3 +1,39 @@
-.highlightTextarea {
+.button {
+  margin: 15px 0 0;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  color: #fff;
+  padding: 5px;
+  border: 2px solid rgb(60, 173, 124);
+  &:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+}
 
+.highlightTextarea{
+
+  .highlight {
+    position: relative;
+    border: 2px solid rgb(60, 173, 124);
+    padding: 5px;
+    margin-top: 15px;
+    min-height: 3em;
+    max-width: 60em;
+    left: 50%;
+    transform: translate(-50%,0);
+  }
+}
+
+.todo-panel {
+  .name {
+    margin-top: 10px;
+  }
+  .input-name {
+    color: #fff;
+    font-size: 15px;
+    border-bottom: 2px solid rgb(60, 173, 124);
+    margin: 10px;
+  }
 }
