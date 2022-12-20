@@ -47,7 +47,7 @@ const TodoPanel: React.FC<TodoPanelProps> = (props) => {
                         type="text"
                         value={name}
                         onChange={nameChange}
-                        className="input-name"
+                        className= {isEdit ? "edit-input" : "input-name" }
                     />
             </div>
 
