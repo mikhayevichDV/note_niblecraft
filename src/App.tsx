@@ -29,6 +29,7 @@ function App() {
 
     const addTodo = ({name, description}: Omit<Todo, 'id'>) => {
         if (name.length === 0 || description.length === 0) return 0
+        if (!name.trim() || !description.trim()) return 0
         setTodos([...todos, {id: uniqValue(), description, name}]);
         todosJSON.current = JSON.stringify([...todos, {id: uniqValue(), description, name}]);
         findTags(description);
@@ -36,6 +37,7 @@ function App() {
 
     const deleteTodo = (id: Todo['id']) => {
         setTodos(todos.filter(todo => todo.id !== id))
+
     }
 
     const selectTodoIdForEdit = (id: Todo['id']) => {
@@ -44,6 +46,7 @@ function App() {
 
     const changeTodo = ({name, description}: Omit<Todo, 'id'>) => {
         if (name.length === 0 || description.length === 0) return 0
+        if (!name.trim() || !description.trim()) return 0
         setTodos(
             todos.map((todo) => {
                 if (todo.id === todoIdForEdit) {
