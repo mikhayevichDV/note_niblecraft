@@ -42,12 +42,12 @@ const TodoPanel: React.FC<TodoPanelProps> = (props) => {
     return (
         <div className="todo-panel">
             <div>
-                    <div className='name'><b>Name</b></div>
+                    <div className="name"><b>Name</b></div>
                     <input
                         type="text"
                         value={name}
                         onChange={nameChange}
-                        className= {"input-name"}
+                        className= "input-name"
                     />
             </div>
 
