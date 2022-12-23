@@ -26,14 +26,10 @@ export const TodoList: React.FC<TodoListProps> = ({
         }).map((todo,index) => {
             if (todo.id === todoIdForEdit) {
                 return <div className='container' key={index}>
-                    <div className='card'>
-                        <div className="face face2">
-                            <div className="content">
+                    <div className="edit-card">
                                 <TodoPanel mode='edit' id={todo.id} description={todo.description} name={todo.name}
                                            changeTodo={changeTodo} editTodo={todo}/>
-                            </div>
-                        </div>
-                    </div>
+                </div>
                 </div>
             }
             return (
